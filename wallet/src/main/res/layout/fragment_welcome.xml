@@ -13,14 +13,13 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="1.81"
+            android:layout_weight="0.2"
             android:padding="@dimen/standard_margin"
             android:scaleType="centerCrop"
-            android:src="@mipmap/spero_intro_logo"
-            app:srcCompat="@mipmap/spero_intro_logo" />
+            android:src="@mipmap/spero_intro_logo_web" />
 
         <TextView
             android:id="@+id/welcome_text"

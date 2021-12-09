@@ -39,7 +39,7 @@
     <string name="erase_address">Apagar o endereço</string>
     <string name="copied_to_clipboard">Copiado para a área de transferência</string>
     <string name="wallet_title_request">RECEBER</string>
-    <string name="wallet_title_balance">BALANÇO</string>
+    <string name="wallet_title_balance">SALDO</string>
     <string name="wallet_title_send">ENVIAR</string>
     <string name="wallet_locked_message">A sua carteira está bloqueada</string>
     <string name="unlock_wallet_title">Desbloquear a sua carteira</string>
@@ -288,14 +288,14 @@
     <string name="account_description_label">Descrição</string>
     <string name="account_extended_private_key_label">Chave privada estendida</string>
     <string name="account_extended_public_key_label">Chave pública estendida</string>
-    <string name="account_public_key_warning">A chave privada permite que você envie moedas desta conta. Não é necessário para esta chave de backup, como ele é derivado de seu </string>
+    <string name="account_public_key_warning">A chave privada permite que você envie moedas desta conta. Não é necessário backup desta chave, porque ela é derivada da sua <i>frase de recuperação</i></string>
     <string name="account_public_key_label">Chave pública</string>
     <string name="account_private_key_warning">Partilha a sua chave pública permitirá a alguém ver o histórico de transações e equilíbrio.</string>
     <string name="action_account_details">Detalhes da conta</string>
-    <string name="action_sign_verify_message">Verifique se a mensagem</string>
+    <string name="action_sign_verify_message">Verificar Mensagem</string>
     <string name="address_not_found_error">O endereço fornecido não pôde ser encontrado nesta conta.</string>
-    <string name="button_sign">Sinal</string>
-    <string name="button_verify">Verifique se</string>
+    <string name="button_sign">Assinar</string>
+    <string name="button_verify">Verificar</string>
     <string name="message_signed">Mensagem assinada</string>
     <string name="message_to_sign_label">mensagem</string>
     <string name="message_verification_failed">Verificação de mensagem falhada</string>
