@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 23
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId 'com.sperocoin.wallet'
         minSdkVersion 10
-        targetSdkVersion 31
+        targetSdkVersion 26
         versionCode 60
         versionName 'v3.0.0.0'
         javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
@@ -57,16 +57,18 @@ dependencies {
     //    androidTestCompile 'org.robolectric:robolectric:2.3'
     //    androidTestCompile 'com.squareup:fest-android:1.0.+'
     compile project(':core')
+    compile 'com.android.support:gridlayout-v7:23.3.0'
+    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.android.support:appcompat-v7:23.3.0'
     //    compile 'com.android.support:preference-v7:23.2.1'
-    compile 'com.google.guava:guava:24.1-jre'
-    compile 'com.google.code.findbugs:jsr305:3.0.2'
+    compile 'com.google.guava:guava:16.0.1'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile 'com.madgag.spongycastle:core:1.51.0.0'
-    compile 'com.google.protobuf:protobuf-java:3.10.0'
-    compile 'com.google.zxing:core:3.3.0'
+    compile 'com.google.protobuf:protobuf-java:2.5.0'
+    compile 'com.google.zxing:core:3.1.0'
     compile 'ch.acra:acra:4.8.5'
-    //noinspection GradleCompatible
     compile 'com.android.support:support-v4-preferencefragment:1.0.0@aar'
-    compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
 }
 
 //apply plugin: 'robolectric'

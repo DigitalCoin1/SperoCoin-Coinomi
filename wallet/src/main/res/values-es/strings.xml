@@ -63,7 +63,7 @@
     <string name="trade">intercambiar</string>
     <string name="receive">recibir</string>
     <!-- Welcome fragment -->
-    <string name="welcome_text">Bienvenido a la billetera Sperocoin</string>
+    <string name="welcome_text">Bienvenido a la billetera Coinomi</string>
     <string name="create_wallet">Crear una billetera nueva</string>
     <string name="restore_wallet">Recuperar una billetera</string>
     <string name="test_wallet">Probar Cartera</string>
@@ -89,7 +89,7 @@
     <!-- Wallet activity -->
     <string name="test_wallet_message">Esta es una billetera de pruebas, donde se pueden enviar y recibir TestNet Bitcoins, Litecoin y Dogecoins.\n\nSi desea utilizar La billetera con dinero real por favor vaya a: <b>Configuración &amp; gt; Restaurar billetera &amp; gt; Crear una nueva billetera</b>.</string>
     <string name="wallet_update_title">Nueva versión disponible</string>
-    <string name="wallet_update_message">Una nueva versión de Sperocoin está disponible, contiene nuevas características y correcciones.</string>
+    <string name="wallet_update_message">Una nueva versión de Coinomi está disponible, contiene nuevas características y correcciones.</string>
     <string name="pay_with">Enviar con</string>
     <string name="exchange_and_pay_title">Cambiar y enviar</string>
     <!-- PayToDialog-->

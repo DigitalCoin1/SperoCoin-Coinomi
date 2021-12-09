@@ -105,7 +105,7 @@
     <!-- Wallet activity -->
     <string name="test_wallet_message">This is a test wallet, where you can send and receive testnet Bitcoins, Litecoin and Dogecoins.\n\nIf you want to use the wallet with real money please go to: <b>Settings &gt; Restore wallet &gt; Create a new wallet</b>.</string>
     <string name="wallet_update_title">New version available</string>
-    <string name="wallet_update_message">A new version of Sperocoin is available, it contains new features and fixes.</string>
+    <string name="wallet_update_message">A new version of Coinomi is available, it contains new features and fixes.</string>
     <string name="pay_with">Send with</string>
     <string name="exchange_and_pay_title">Exchange and send</string>
     <!-- PayToDialog-->

@@ -103,9 +103,14 @@ public class ExchangeRatesProvider extends ContentProvider {
     private String lastCryptoCurrency = null;
 
     private static final String BASE_URL = "https://ticker.coinomi.net/simple";
-    private static final String BASE_URL_SPERO = "https://api.coingecko.com/api/v3/simple/price?ids=sperocoin&vs_currencies=btc";
+    //private static final String BASE_URL = "http://18.220.104.50/simple/BRL.html";
+    //private static final String BASE_URL_SPERO = "https://braziliex.com/api/v1/public/ticker/spero_brl";
+    //private static final String BASE_URL_SPERO = "https://braziliex.com/api/v1/public/ticker/spero_btc";
+    //private static final String BASE_URL_SPERO = "https://api.coinmarketcap.com/v1/ticker/sperocoin";
     private static final String TO_LOCAL_URL = BASE_URL + "/to-local/%s";
+    //private static final String TO_LOCAL_URL = BASE_URL + "brl";
     private static final String TO_CRYPTO_URL = BASE_URL + "/to-crypto/%s";
+    //private static final String TO_CRYPTO_URL = BASE_URL + "btc";
     private static final String COINOMI_SOURCE = "coinomi.com";
 
     private static final Logger log = LoggerFactory.getLogger(ExchangeRatesProvider.class);
@@ -232,6 +237,7 @@ public class ExchangeRatesProvider extends ContentProvider {
                     url = new URL(String.format(TO_LOCAL_URL, symbol));
                 }
 
+                //url = new URL("https://braziliex.com/api/v1/public/ticker/spero_brl");
             } catch (final MalformedURLException x) {
                 throw new RuntimeException(x); // Should not happen
             }
@@ -340,9 +346,11 @@ public class ExchangeRatesProvider extends ContentProvider {
                         System.currentTimeMillis() - start);
 
                 JSONObject coinomiJsonObject = new JSONObject(response.body().string());
-                JSONObject speroJsonObject =  requestExchangeRatesJsonCoingecko(new URL(BASE_URL_SPERO));
+                //JSONObject speroJsonObject =  requestExchangeRatesJsonBraziliex(new URL(BASE_URL_SPERO));
+                //JSONObject speroJsonObject =  requestExchangeRatesJsonCMC(new URL(BASE_URL_SPERO));
                 JSONObject returnJsonObject = new JSONObject();
-                JSONObject[] objs = new JSONObject[] { coinomiJsonObject, speroJsonObject };
+                //JSONObject[] objs = new JSONObject[] { coinomiJsonObject, speroJsonObject };
+                JSONObject[] objs = new JSONObject[] { coinomiJsonObject };
                 for (JSONObject obj : objs) {
                     Iterator it = obj.keys();
                     while (it.hasNext()) {
@@ -363,7 +371,7 @@ public class ExchangeRatesProvider extends ContentProvider {
         return null;
     }
 
-    private JSONObject requestExchangeRatesJsonCoingecko(final URL url) {
+    private JSONObject requestExchangeRatesJsonBraziliex(final URL url) {
         // Return null if no connection
         final NetworkInfo activeInfo = connManager.getActiveNetworkInfo();
         if (activeInfo == null || !activeInfo.isConnected()) return null;
@@ -376,17 +384,17 @@ public class ExchangeRatesProvider extends ContentProvider {
         try {
             Response response = client.newCall(request).execute();
             if (response.isSuccessful()) {
-                log.info("fetched exchange Coingecko rates from {}, took {} ms", url,
+                log.info("fetched exchange Braziliex rates from {}, took {} ms", url,
                         System.currentTimeMillis() - start);
-                return new JSONObject(response.body().string().replace("btc", "SPERO"));
+                return new JSONObject(response.body().string().replace("last", "SPERO"));
             } else {
-                log.warn("Error Coingecko HTTP code '{}' when fetching exchange rates from {}",
+                log.warn("Error Braziliex HTTP code '{}' when fetching exchange rates from {}",
                         response.code(), url);
             }
         } catch (IOException e) {
-            log.warn("Error Coingecko '{}' when fetching exchange rates from {}", e.getMessage(), url);
+            log.warn("Error Braziliex '{}' when fetching exchange rates from {}", e.getMessage(), url);
         } catch (JSONException e) {
-            log.warn("Could Coingecko not parse exchange rates JSON: {}", e.getMessage());
+            log.warn("Could Braziliex not parse exchange rates JSON: {}", e.getMessage());
         }
         return null;
     }

@@ -1,10 +1,12 @@
-Sperocoin(Coinomi) Wallet
+Coinomi Wallet
 ===============
 
-Website: https://sperocoin.org
+Website: https://coinomi.com
 
-Support: https://suporte.sperocoin.org
+Support: https://coinomi.freshdesk.com/support/home
 
-Announcements: https://t.me/sperocoin_official
+Announcements: https://twitter.com/CoinomiWallet
 
-Download Sperocoin Wallet: https://sperocoin.org
+Blog: https://medium.com/@coinomi/
+
+Download Coinomi Wallet: https://play.google.com/store/apps/details?id=com.coinomi.wallet

@@ -63,7 +63,7 @@
     <string name="trade">scambia</string>
     <string name="receive">ricevi</string>
     <!-- Welcome fragment -->
-    <string name="welcome_text">Benvenuto nel portafoglio di Sperocoin</string>
+    <string name="welcome_text">Benvenuto nel portafoglio di Coinomi</string>
     <string name="create_wallet">Crea un nuovo portafoglio</string>
     <string name="restore_wallet">Ripristina un portafoglio</string>
     <string name="test_wallet">Test portafoglio</string>
@@ -89,7 +89,7 @@
     <!-- Wallet activity -->
     <string name="test_wallet_message">Questo è un portafoglio di prova, dove puoi inviare e ricevere Bitcoins, Litecoin e Dogecoins di prova.\n\nSe vuoi usare il portafoglio con monete reali per favore vai a:<b>Impostazioni &gt; Ripristina portafoglio &gt; Crea un nuovo portafoglio</b>.</string>
     <string name="wallet_update_title">La nuova versione è disponibile</string>
-    <string name="wallet_update_message">Una nuova versione di Sperocoin è disponibile, contiene  nuove caratteristiche e correzioni.</string>
+    <string name="wallet_update_message">Una nuova versione di Coinomi è disponibile, contiene  nuove caratteristiche e correzioni.</string>
     <string name="pay_with">Invia con</string>
     <string name="exchange_and_pay_title">Scambia e invia</string>
     <!-- PayToDialog-->

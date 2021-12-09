@@ -15,6 +15,7 @@ public class SperocoinMain extends PeerFamily {
         p2shHeader = 5;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         spendableCoinbaseDepth = 5;
+        //dumpedPrivateKeyHeader = 178;
 
         name = "Sperocoin";
         symbol = "SPERO";
@@ -25,7 +26,7 @@ public class SperocoinMain extends PeerFamily {
         minNonDust = value(10000); // 0.00001SPERO
         softDustLimit = minNonDust;//value(100000);
         softDustPolicy = SoftDustPolicy.NO_POLICY;
-        signedMessageHeader = toBytes("SperoCoin Signed Message:\n");
+        signedMessageHeader = toBytes("Spero Signed Message:\n");
     }
 
     private static SperocoinMain instance = new SperocoinMain();
