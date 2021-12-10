@@ -54,9 +54,9 @@
     <string name="scan_qr_code">Scan QR code</string>
     <string name="erase_address">Erase address</string>
     <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="wallet_title_request">receive</string>
-    <string name="wallet_title_balance">balance</string>
-    <string name="wallet_title_send">send</string>
+    <string name="wallet_title_request">RECEIVE</string>
+    <string name="wallet_title_balance">BALANCE</string>
+    <string name="wallet_title_send">SEND</string>
     <string name="wallet_locked_message">Your wallet is locked</string>
     <string name="wallet_is_not_locked_message">Your wallet is not locked</string>
     <string name="unlock_wallet_title">Unlock your wallet</string>

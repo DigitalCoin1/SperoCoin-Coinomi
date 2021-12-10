@@ -9,6 +9,14 @@
     <color name="primary_900">#01579B</color>
     <color name="accent">#0091EA</color>
 
+    <color name="primary_spero_100">#9933ff</color>
+    <color name="primary_spero_500">#8000ff</color>
+    <color name="primary_spero_600">#6600cc</color>
+    <color name="primary_spero_700">#5900b3</color>
+    <color name="primary_spero_800">#400080</color>
+    <color name="primary_spero_900">#330066</color>
+    <color name="accent_spero">#7300e6</color>
+
     <color name="send_light">#FFECB3</color>
     <color name="send_normal">#FF6F00</color>
     <color name="receive_light">#B3E5FC</color>
@@ -31,7 +39,7 @@
     <color name="address_bg_used">@color/receive_color_bg</color>
 
     <color name="actionbar_fg">@color/white_almost</color>
-    <color name="actionbar_bg">@color/primary_500</color>
+    <color name="actionbar_bg">@color/primary_spero_500</color>
 
     <color name="navigation_drawer_bg">#F0FFFFFF</color>
     <color name="navigation_drawer_add_coins_bg">#A0FFFFFF</color>

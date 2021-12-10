@@ -19,7 +19,7 @@ public class SperocoinMain extends PeerFamily {
 
         name = "Sperocoin";
         symbol = "SPERO";
-        uriScheme = "spero";
+        uriScheme = "SperoCoin";
         bip44Index = 130;
         unitExponent = 8;
         feeValue = value(10000); // 0.00001SPERO

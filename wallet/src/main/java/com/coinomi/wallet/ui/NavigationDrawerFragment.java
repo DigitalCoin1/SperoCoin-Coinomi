@@ -103,12 +103,12 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.add_coins).setOnClickListener(new View.OnClickListener() {
+        /*view.findViewById(R.id.add_coins).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addCoins();
             }
-        });
+        });*/
 
         return view;
     }

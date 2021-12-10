@@ -2,26 +2,26 @@
 
     <style name="AppThemeNoTitleBar" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <item name="colorPrimary">@color/primary_500</item>
+        <item name="colorPrimary">@color/primary_spero_500</item>
 
         <!-- colorPrimaryDark is used for the status bar -->
-        <item name="colorPrimaryDark">@color/primary_900</item>
+        <item name="colorPrimaryDark">@color/primary_spero_900</item>
 
         <!-- colorAccent is used as the default value for colorControlActivated,
              which is used to tint widgets -->
-        <item name="colorAccent">@color/accent</item>
+        <item name="colorAccent">@color/accent_spero</item>
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- colorPrimary is used for the default action bar background -->
-        <item name="colorPrimary">@color/primary_500</item>
+        <item name="colorPrimary">@color/primary_spero_500</item>
 
         <!-- colorPrimaryDark is used for the status bar -->
-        <item name="colorPrimaryDark">@color/primary_900</item>
+        <item name="colorPrimaryDark">@color/primary_spero_900</item>
 
         <!-- colorAccent is used as the default value for colorControlActivated,
              which is used to tint widgets -->
-        <item name="colorAccent">@color/accent</item>
+        <item name="colorAccent">@color/accent_spero</item>
 
         <item name="android:windowContentOverlay">@null</item>
     </style>
@@ -34,7 +34,7 @@
     </style>
 
     <style name="BorderlessButtonLink" parent="BorderlessButton">
-        <item name="android:textColor">@color/primary_500</item>
+        <item name="android:textColor">@color/primary_spero_500</item>
     </style>
 
     <!-- Font icons -->
@@ -80,7 +80,7 @@
     </style>
 
     <style name="SeedText" parent="">
-        <item name="android:textColor">@color/primary_500</item>
+        <item name="android:textColor">@color/primary_spero_500</item>
         <item name="android:textSize">@dimen/seed_text_size</item>
     </style>
 
@@ -131,7 +131,7 @@
 
     <!-- Widget send output -->
     <style name="SendOutputTypeText" parent="NormalText">
-        <item name="android:textColor">@color/primary_500</item>
+        <item name="android:textColor">@color/primary_spero_500</item>
     </style>
     <style name="SendOutputAmount" parent="NormalText">
         <item name="android:textSize">@dimen/send_output_amount_text_size</item>
