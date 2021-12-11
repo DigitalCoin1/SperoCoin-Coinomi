@@ -41,6 +41,9 @@
 -dontwarn butterknife.internal.**
 -keep class **$$ViewBinder { *; }
 
+-keepattributes *Annotation*
+-keep @**annotation** class * {*;}
+
 -keepclasseswithmembernames class * {
     @butterknife.* <fields>;
 }
