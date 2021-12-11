@@ -56,7 +56,7 @@ public class ServerClient implements BitBlockchainConnection {
     private static final Logger log = LoggerFactory.getLogger(ServerClient.class);
 
     private static final ScheduledThreadPoolExecutor connectionExec;
-    private static final String CLIENT_PROTOCOL = "0.9";
+    private static final String CLIENT_PROTOCOL = "1.4";
 
     static {
         connectionExec = new ScheduledThreadPoolExecutor(1);
