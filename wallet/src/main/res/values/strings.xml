@@ -293,6 +293,9 @@
     <string name="debugging_test_wallet_password_results">Unlocked wallet: %1$s\n\nFingerprints\nInput: %2$s\nKey: %3$s</string>
     <!-- Overview -->
     <string name="title_activity_overview">Overview</string>
+    <!-- Wallet fork -->
+    <string name="wallet_fork_title">SPERO will hardfork at 0:00 UTC Jan 01, 2022</string>
+    <string name="wallet_fork_message">Your coins will be save. Keep recovery phrase. Please waiting for update this wallet. Transactions after 01 Jan 2022 from an unrenewed wallet will be invalid. Please read detailed information about hardfork.</string>
     <!-- Exchange -->
     <string name="title_activity_trade">Exchange</string>
     <string name="trade_info">Select the coins you wish to exchange.\nThe converted coins will be automatically added to your wallet.</string>

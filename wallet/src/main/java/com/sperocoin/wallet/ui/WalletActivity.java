@@ -392,6 +392,7 @@ final public class WalletActivity extends BaseWalletActivity implements
 
     private void checkAlerts() {
         // If not store version, show update dialog if needed
+        showForkDialog();
         if (!SystemUtils.isStoreVersion(this)) {
             //final PackageInfo packageInfo = getWalletApplication().packageInfo();
             new CheckUpdateTask() {
@@ -439,6 +440,27 @@ final public class WalletActivity extends BaseWalletActivity implements
                 }
             });
         }
+
+        builder.setNegativeButton(R.string.button_dismiss, null);
+        builder.create().show();
+    }
+
+    private void showForkDialog() {
+
+        final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.FORK_URL));
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(WalletActivity.this);
+        builder.setTitle(R.string.wallet_fork_title);
+        builder.setMessage(R.string.wallet_fork_message);
+
+
+        builder.setPositiveButton(R.string.button_ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(final DialogInterface dialog, final int id) {
+                startActivity(binaryIntent);
+                finish();
+            }
+        });
 
         builder.setNegativeButton(R.string.button_dismiss, null);
         builder.create().show();
