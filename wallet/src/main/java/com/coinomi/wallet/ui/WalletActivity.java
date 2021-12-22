@@ -50,6 +50,8 @@ import static com.coinomi.wallet.ui.NavDrawerItemType.ITEM_OVERVIEW;
 import static com.coinomi.wallet.ui.NavDrawerItemType.ITEM_SECTION_TITLE;
 import static com.coinomi.wallet.ui.NavDrawerItemType.ITEM_TRADE;
 
+import com.google.android.gms.security.ProviderInstaller;
+
 
 /**
  * @author John L. Jegutanis
@@ -108,6 +110,7 @@ final public class WalletActivity extends BaseWalletActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wallet);
+        checkTls();
 
         if (getWalletApplication().getWallet() == null) {
             startIntro();
@@ -389,16 +392,18 @@ final public class WalletActivity extends BaseWalletActivity implements
             actionBar.setTitle(title);
         }
     }
-/*
+
     private void checkAlerts() {
         // If not store version, show update dialog if needed
         if (!SystemUtils.isStoreVersion(this)) {
-            final PackageInfo packageInfo = getWalletApplication().packageInfo();
+            //final PackageInfo packageInfo = getWalletApplication().packageInfo();
             new CheckUpdateTask() {
                 @Override
                 protected void onPostExecute(Integer serverVersionCode) {
-                    if (serverVersionCode != null && serverVersionCode > packageInfo.versionCode) {
-                        showUpdateDialog();
+                    if(serverVersionCode != null) {
+                        if (serverVersionCode < 0) {
+                            showUpdateDialog();
+                        }
                     }
                 }
             }.execute();
@@ -441,7 +446,7 @@ final public class WalletActivity extends BaseWalletActivity implements
         builder.setNegativeButton(R.string.button_dismiss, null);
         builder.create().show();
     }
-*/
+
     @Override
     public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
@@ -837,6 +842,24 @@ final public class WalletActivity extends BaseWalletActivity implements
                         ref.showScanFailedMessage(e);
                     }
                     break;
+            }
+        }
+    }
+    private void checkTls() {
+        if (android.os.Build.VERSION.SDK_INT < 21) {    // android.os.Build.VERSION_CODES.LOLLIPOP = 21
+            try {
+                ProviderInstaller.installIfNeededAsync(this, new ProviderInstaller.ProviderInstallListener() {
+                    @Override
+                    public void onProviderInstalled() {
+
+                    }
+
+                    @Override
+                    public void onProviderInstallFailed(int i, Intent intent) {
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
