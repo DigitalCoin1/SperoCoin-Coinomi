@@ -3,17 +3,17 @@
 
     <Preference android:title="@string/title_activity_transaction_fees" >
         <intent android:targetPackage="@string/app_package"
-            android:targetClass="com.coinomi.wallet.ui.FeesSettingsActivity" />
+            android:targetClass="com.sperocoin.wallet.ui.FeesSettingsActivity" />
     </Preference>
 
     <Preference android:title="@string/title_activity_show_seed" >
         <intent android:targetPackage="@string/app_package"
-            android:targetClass="com.coinomi.wallet.ui.ShowSeedActivity" />
+            android:targetClass="com.sperocoin.wallet.ui.ShowSeedActivity" />
     </Preference>
 
     <Preference android:title="@string/pref_title_restore_wallet" >
         <intent android:targetPackage="@string/app_package"
-            android:targetClass="com.coinomi.wallet.ui.IntroActivity" />
+            android:targetClass="com.sperocoin.wallet.ui.IntroActivity" />
     </Preference>
 
     <CheckBoxPreference
@@ -24,6 +24,6 @@
 
     <Preference android:title="@string/title_activity_debugging" >
         <intent android:targetPackage="@string/app_package"
-            android:targetClass="com.coinomi.wallet.ui.DebuggingActivity" />
+            android:targetClass="com.sperocoin.wallet.ui.DebuggingActivity" />
     </Preference>
 </PreferenceScreen>
