@@ -54,6 +54,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -111,8 +112,8 @@ public class Constants {
     /** Default currency to use if all default mechanisms fail. */
     public static final String DEFAULT_EXCHANGE_CURRENCY = "USD";
 
-    public static final Charset UTF_8 = Charset.forName("UTF-8");
-    public static final Charset US_ASCII = Charset.forName("US-ASCII");
+    public static final Charset UTF_8 = StandardCharsets.UTF_8;
+    public static final Charset US_ASCII = StandardCharsets.US_ASCII;
 
     public static final char CHAR_HAIR_SPACE = '\u200a';
     public static final char CHAR_THIN_SPACE = '\u2009';
@@ -218,8 +219,8 @@ public class Constants {
             new CoinAddress(IxcoinMain.get(),       new ServerAddress("ixc-cce-1.coinomi.net", 5047),
                                                     new ServerAddress("ixc-cce-2.coinomi.net", 5047)),
 */
-            new CoinAddress(SperocoinMain.get(),   new ServerAddress("electrumx.sperocoin.org", 50001),
-                                                    new ServerAddress("electrumx.sperocoin.org", 50002))
+            new CoinAddress(SperocoinMain.get(),   new ServerAddress("electrumx.sperocoin.org", 50002),
+                                                    new ServerAddress("electrumx.sperocoin.org", 50001))
     );
 
     public static final HashMap<CoinType, Integer> COINS_ICONS;
