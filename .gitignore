@@ -8,4 +8,4 @@ core/build
 wallet/build
 wallet/release
 *.db
-java_pid17532.hprof
+*.hprof
