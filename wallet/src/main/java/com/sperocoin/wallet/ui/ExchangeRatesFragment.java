@@ -40,6 +40,7 @@ import android.widget.Toast;
 import com.sperocoin.core.coins.BitcoinMain;
 import com.sperocoin.core.coins.CoinID;
 import com.sperocoin.core.coins.CoinType;
+import com.sperocoin.core.coins.SperocoinMain;
 import com.sperocoin.core.coins.Value;
 import com.sperocoin.core.util.GenericUtils;
 import com.sperocoin.wallet.Configuration;
@@ -99,7 +100,7 @@ public final class ExchangeRatesFragment extends ListFragment implements OnShare
         if (getArguments() != null && getArguments().containsKey(Constants.ARG_COIN_ID)) {
             type = CoinID.typeFromId(getArguments().getString(Constants.ARG_COIN_ID));
         } else {
-            type = BitcoinMain.get();
+            type = SperocoinMain.get();
         }
         contentUri = ExchangeRatesProvider.contentUriToLocal(context.getPackageName(),
                 type.getSymbol(), false);

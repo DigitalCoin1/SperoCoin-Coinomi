@@ -116,6 +116,7 @@ public class Value implements Monetary, Comparable<Value>, Serializable {
      */
     public static Value parse(final ValueType type, final BigDecimal decimal) {
         return Value.valueOf(type, decimal.movePointRight(type.getUnitExponent())
+                .setScale(0, BigDecimal.ROUND_HALF_EVEN)
                 .toBigIntegerExact().longValue());
     }
 
@@ -158,8 +159,8 @@ public class Value implements Monetary, Comparable<Value>, Serializable {
     }
 
     public Value[] divideAndRemainder(final long divisor) {
-        return new Value[] { new Value(this.type, this.value / divisor),
-                             new Value(this.type, this.value % divisor) };
+        return new Value[]{new Value(this.type, this.value / divisor),
+                new Value(this.type, this.value % divisor)};
     }
 
     public long divide(final Value divisor) {
@@ -298,7 +299,7 @@ public class Value implements Monetary, Comparable<Value>, Serializable {
      * Check if the value is within the [min, max] range
      */
     public boolean within(Value min, Value max) {
-        return compareTo(min) >=0 && compareTo(max) <= 0;
+        return compareTo(min) >= 0 && compareTo(max) <= 0;
     }
 
     public static Value max(Value value1, Value value2) {

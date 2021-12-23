@@ -14,7 +14,7 @@ public class SperocoinMain extends PeerFamily {
         p2shHeader = 5;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         spendableCoinbaseDepth = 5;
-        //dumpedPrivateKeyHeader = 178;
+        dumpedPrivateKeyHeader = 178;
 
         name = "Sperocoin";
         symbol = "SPERO";

@@ -21,7 +21,7 @@ import com.sperocoin.core.coins.CoinID;
 import com.sperocoin.core.coins.CoinType;
 import com.sperocoin.core.coins.Value;
 import com.sperocoin.core.exceptions.AddressMalformedException;
-import com.sperocoin.core.network.AddressStatus;
+import com.sperocoin.core.network.ScriptStatus;
 import com.sperocoin.core.protos.Protos;
 import com.sperocoin.core.wallet.families.bitcoin.BitTransaction;
 import com.sperocoin.core.wallet.families.bitcoin.BitWalletTransaction;
@@ -86,12 +86,12 @@ public class WalletPocketProtobufSerializer {
             walletBuilder.setId(pocket.getId());
         }
 
-        for (AddressStatus status : pocket.getAllAddressStatus()) {
+        for (ScriptStatus status : pocket.getAllScriptStatus()) {
             Protos.AddressStatus.Builder addressStatus = Protos.AddressStatus.newBuilder();
             if (status.getStatus() == null) {
                 continue; // Don't serialize null statuses
             }
-            addressStatus.setAddress(status.getAddress().toString());
+            addressStatus.setAddress(status.getScriptHash().toString());
             addressStatus.setStatus(status.getStatus());
 
             walletBuilder.addAddressStatus(addressStatus.build());
@@ -280,16 +280,21 @@ public class WalletPocketProtobufSerializer {
 //            }
             TransactionConfidence.Source source = confidence.getSource();
             switch (source) {
-                case SELF: confidenceBuilder.setSource(Protos.TransactionConfidence.Source.SOURCE_SELF); break;
-                case NETWORK: confidenceBuilder.setSource(Protos.TransactionConfidence.Source.SOURCE_NETWORK); break;
+                case SELF:
+                    confidenceBuilder.setSource(Protos.TransactionConfidence.Source.SOURCE_SELF);
+                    break;
+                case NETWORK:
+                    confidenceBuilder.setSource(Protos.TransactionConfidence.Source.SOURCE_NETWORK);
+                    break;
                 case UNKNOWN:
                     // Fall through.
                 default:
-                    confidenceBuilder.setSource(Protos.TransactionConfidence.Source.SOURCE_UNKNOWN); break;
+                    confidenceBuilder.setSource(Protos.TransactionConfidence.Source.SOURCE_UNKNOWN);
+                    break;
             }
         }
 
-        for (ListIterator<PeerAddress> it = confidence.getBroadcastBy(); it.hasNext();) {
+        for (ListIterator<PeerAddress> it = confidence.getBroadcastBy(); it.hasNext(); ) {
             PeerAddress address = it.next();
             Protos.PeerAddress proto = Protos.PeerAddress.newBuilder()
                     .setIpAddress(ByteString.copyFrom(address.getAddr().getAddress()))
@@ -371,6 +376,8 @@ public class WalletPocketProtobufSerializer {
             }
 
             // Read all the address statuses
+            //TODO fix it
+            /*
             try {
                 for (Protos.AddressStatus sp : walletProto.getAddressStatusList()) {
                     AbstractAddress addr = coinType.newAddress(sp.getAddress());
@@ -380,6 +387,7 @@ public class WalletPocketProtobufSerializer {
             } catch (AddressMalformedException e) {
                 throw new UnreadableWalletException(e.getMessage(), e);
             }
+            */
 
             // Update the lastBlockSeenHash.
             if (!walletProto.hasLastSeenBlockHash()) {
@@ -524,15 +532,19 @@ public class WalletPocketProtobufSerializer {
         BitTransaction tx = txMap.get(txProto.getHash());
         final WalletTransaction.Pool pool;
         switch (txProto.getPool()) {
-            case PENDING: pool = WalletTransaction.Pool.PENDING; break;
+            case PENDING:
+                pool = WalletTransaction.Pool.PENDING;
+                break;
             case SPENT:
-            case UNSPENT: pool = WalletTransaction.Pool.CONFIRMED; break;
+            case UNSPENT:
+                pool = WalletTransaction.Pool.CONFIRMED;
+                break;
             case DEAD:
             default:
                 throw new UnreadableWalletException("Unknown transaction pool: " + txProto.getPool());
         }
 
-        for (int i = 0 ; i < tx.getOutputs(false).size() ; i++) {
+        for (int i = 0; i < tx.getOutputs(false).size(); i++) {
             TransactionOutput output = tx.getOutputs().get(i);
             final Protos.TransactionOutput transactionOutput = txProto.getTransactionOutput(i);
 
@@ -575,13 +587,20 @@ public class WalletPocketProtobufSerializer {
         }
         ConfidenceType confidenceType;
         switch (confidenceProto.getType()) {
-            case BUILDING: confidenceType = ConfidenceType.BUILDING; break;
-            case DEAD: confidenceType = ConfidenceType.DEAD; break;
-            case PENDING: confidenceType = ConfidenceType.PENDING; break;
+            case BUILDING:
+                confidenceType = ConfidenceType.BUILDING;
+                break;
+            case DEAD:
+                confidenceType = ConfidenceType.DEAD;
+                break;
+            case PENDING:
+                confidenceType = ConfidenceType.PENDING;
+                break;
             case UNKNOWN:
                 // Fall through.
             default:
-                confidenceType = ConfidenceType.UNKNOWN; break;
+                confidenceType = ConfidenceType.UNKNOWN;
+                break;
         }
         confidence.setConfidenceType(confidenceType);
         if (confidenceProto.hasAppearedAtHeight()) {
@@ -625,12 +644,17 @@ public class WalletPocketProtobufSerializer {
             confidence.markBroadcastBy(address);
         }
         switch (confidenceProto.getSource()) {
-            case SOURCE_SELF: confidence.setSource(TransactionConfidence.Source.SELF); break;
-            case SOURCE_NETWORK: confidence.setSource(TransactionConfidence.Source.NETWORK); break;
+            case SOURCE_SELF:
+                confidence.setSource(TransactionConfidence.Source.SELF);
+                break;
+            case SOURCE_NETWORK:
+                confidence.setSource(TransactionConfidence.Source.NETWORK);
+                break;
             case SOURCE_UNKNOWN:
                 // Fall through.
-            default: confidence.setSource(TransactionConfidence.Source.UNKNOWN); break;
+            default:
+                confidence.setSource(TransactionConfidence.Source.UNKNOWN);
+                break;
         }
     }
-
 }

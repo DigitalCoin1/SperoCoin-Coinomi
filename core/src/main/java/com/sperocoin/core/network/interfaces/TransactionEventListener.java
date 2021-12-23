@@ -1,6 +1,6 @@
 package com.sperocoin.core.network.interfaces;
 
-import com.sperocoin.core.network.AddressStatus;
+import com.sperocoin.core.network.ScriptStatus;
 import com.sperocoin.core.network.BlockHeader;
 import com.sperocoin.core.network.ServerClient.HistoryTx;
 
@@ -14,9 +14,9 @@ public interface TransactionEventListener<T> {
 
     void onBlockUpdate(BlockHeader header);
 
-    void onAddressStatusUpdate(AddressStatus status);
+    void onScriptStatusUpdate(ScriptStatus status);
 
-    void onTransactionHistory(AddressStatus status, List<HistoryTx> historyTxes);
+    void onTransactionHistory(ScriptStatus status, List<HistoryTx> historyTxes);
 
     void onTransactionUpdate(T transaction);
 

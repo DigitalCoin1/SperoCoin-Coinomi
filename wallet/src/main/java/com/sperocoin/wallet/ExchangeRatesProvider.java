@@ -47,6 +47,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
@@ -63,9 +64,11 @@ import javax.annotation.Nullable;
 public class ExchangeRatesProvider extends ContentProvider {
 
     public static class ExchangeRate {
-        @Nonnull public final ExchangeRateBase rate;
+        @Nonnull
+        public final ExchangeRateBase rate;
         public final String currencyCodeId;
-        @Nullable public final String source;
+        @Nullable
+        public final String source;
 
         public ExchangeRate(@Nonnull final ExchangeRateBase rate,
                             final String currencyCodeId, @Nullable final String source) {
@@ -139,16 +142,16 @@ public class ExchangeRatesProvider extends ContentProvider {
     }
 
     public static Uri contentUriToLocal(@Nonnull final String packageName,
-                                  @Nonnull final String coinSymbol,
-                                  final boolean offline) {
+                                        @Nonnull final String coinSymbol,
+                                        final boolean offline) {
         final Uri.Builder uri = contentUri(packageName, offline);
         uri.appendPath("to-local").appendPath(coinSymbol);
         return uri.build();
     }
 
     public static Uri contentUriToCrypto(@Nonnull final String packageName,
-                                  @Nonnull final String localSymbol,
-                                  final boolean offline) {
+                                         @Nonnull final String localSymbol,
+                                         final boolean offline) {
         final Uri.Builder uri = contentUri(packageName, offline);
         uri.appendPath("to-crypto").appendPath(localSymbol);
         return uri.build();
@@ -279,6 +282,11 @@ public class ExchangeRatesProvider extends ContentProvider {
         }
 
         return cursor;
+    }
+
+    BigDecimal getValue(Value value) {
+        double pow = Math.pow(10, value.smallestUnitExponent());
+        return BigDecimal.valueOf(value.value / pow);
     }
 
     private void addRow(MatrixCursor cursor, ExchangeRate exchangeRate) {

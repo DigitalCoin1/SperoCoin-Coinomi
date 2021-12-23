@@ -1,9 +1,9 @@
 package com.sperocoin.core.network.interfaces;
 
-import com.sperocoin.core.network.AddressStatus;
-import com.sperocoin.core.wallet.AbstractAddress;
+import com.sperocoin.core.network.ScriptStatus;
 
 import org.bitcoinj.core.Sha256Hash;
+import org.bitcoinj.script.Script;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ public interface BlockchainConnection<T> {
 
     void subscribeToBlockchain(final TransactionEventListener<T> listener);
 
-    void subscribeToAddresses(List<AbstractAddress> addresses,
-                              TransactionEventListener<T> listener);
+    void subscribeToScripts(List<Script> scripts,
+                            TransactionEventListener<T> listener);
 
-    void getHistoryTx(AddressStatus status, TransactionEventListener<T> listener);
+    void getHistoryTx(ScriptStatus status, TransactionEventListener<T> listener);
 
     void getTransaction(Sha256Hash txHash, TransactionEventListener<T> listener);
 
@@ -39,6 +39,4 @@ public interface BlockchainConnection<T> {
     boolean isActivelyConnected();
 
     void startAsync();
-
-
 }

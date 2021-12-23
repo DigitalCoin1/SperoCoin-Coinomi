@@ -453,5 +453,14 @@ The user of the wallet agrees to arbitrate any dispute arising from or in connec
 8. Last amendment\n
 \n
 This disclaimer was amended for the last time on January 1st, 2016.</string>
+    <string name="wallet_transactions_stake">Staked</string>
+    <string name="wallet_nvs">NVS transaction</string>
+    <string name="test_wallet_warning_title">Create a test portfolio?</string>
+    <string name="test_wallet_warning_message">If you create a new test wallet, your existing portfolio will be lost, you can recover it with your <i>recovery phrase</i>.</string>
+    <string name="amount_error_decimal_places">Too many decimal places, try less than %1$d</string>
+    <string name="set_password_seed_protect">Also protect my recovery phrase (BIP39)</string>
+    <string name="set_password_seed_protect_info">The password becomes permanent and is needed to restore your wallet with the recovery phrase. Warning: If you forget your password it will be impossible to restore your wallet!</string>
+    <string name="seed_encrypted_touch_to_decrypt">Touch to unlock</string>
+    <string name="action_balance">Balance</string>
 
 </resources>
