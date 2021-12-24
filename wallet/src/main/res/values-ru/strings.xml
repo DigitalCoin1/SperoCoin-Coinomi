@@ -181,7 +181,7 @@
     <string name="about_credits_nubits">Инфраструктура серверов предоставлена NuBits - Первой Всемирной Стабильной Цифровой Валютой \nhttps://nubits.com/</string>
     <string name="about_credits_translations">Переводы выполнили:</string>
     <string name="about_credits_bitcoinj">Используется библиотека Bitcoinj\nhttp://bitcoinj.github.io/</string>
-    <string name="about_credits_electrum">Используется серверное ПО от Electrum\nhttps://electrum.org/</string>
+    <string name="about_credits_electrum">Используется серверное ПО от ElectrumX\nhttps://github.com/DigitalCoin1/electrumx-sperocoin/</string>
     <string name="about_credits_schildbach">Под влиянием работы Andreas Schildbach\nhttps://github.com/schildbach/bitcoin-wallet/</string>
     <string name="about_credits_zxing">QR-код сканер от ZXing\nhttps://github.com/zxing/zxing</string>
     <string name="about_credits_crypto_icons">Иконки криптовалюты от Chris Shepherd\nhttps://github.com/shphrd/crypto-icons</string>

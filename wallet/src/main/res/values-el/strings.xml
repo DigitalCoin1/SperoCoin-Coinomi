@@ -11,7 +11,7 @@
     <string name="action_sign_verify_message">Υπογραφή/επαλήθευση μηνύματος</string>
     <string name="action_account_details">Λεπτομέρειες λογαριασμού</string>
     <string name="action_exchange_history">Ιστορικό συναλλαγών</string>
-    <string name="action_new_address">Νέα διεύθυνση</string>
+    <string name="action_new_address">Νέα διεύθυνση</string>string name="about_credits_elect
     <string name="action_swap_coins">Αντιστροφή νομισμάτων</string>
     <string name="action_delete">Διαγραφή</string>
     <string name="action_change_address_type">Αλλαγή τύπου διεύθυνσης</string>
@@ -178,8 +178,8 @@
     <string name="about_credits_nubits">Οι κεντρικοί εξυπηρετητές είναι μια προσφορά της NuBits\nhttps://nubits.com/</string>
     <string name="about_credits_translations">Μεταφράσεις από τους:</string>
     <string name="about_credits_bitcoinj">Χρησιμοποιείται η βιβλιοθήκη Bitcoinj\nhttp://bitcoinj.github.io/</string>
-    <string name="about_credits_electrum">Χρησιμοποιείται λογισμικό του εξυπηρετητή Electrum\nhttps://electrum.org/</string>
-    <string name="about_credits_schildbach">Επηρεασμένο από τη δουλειά του Andreas Schildbach \nhttps://github.com/schildbach/bitcoin-wallet/</string>
+    <string name="about_credits_electrum">Χρησιμοποιείται λογισμικό του εξυπηρετητή ElectrumX https://github.com/DigitalCoin1/electrumx-sperocoin/</string>
+    <string name="about_credits_schildbach">Επηρεασμένο από τη δουλειά του Andreas Schildbach  https://github.com/schildbach/bitcoin-wallet/</string>
     <string name="about_credits_zxing">Λειτουργία QR-code από τον ZXing\nhttps://github.com/zxing/zxing</string>
     <string name="about_credits_crypto_icons">Εικονίδια κρυπτονομισμάτων από τον Chris Shepherd\nhttps://github.com/shphrd/crypto-icons</string>
     <string name="about_credits_font_icons">Εικονίδια φόντων από τον Daniel Bruce\nhttp://www.entypo.com</string>

@@ -34,6 +34,8 @@ android {
         exclude 'lib/x86_64/darwin/libscrypt.dylib'
         exclude 'lib/x86_64/freebsd/libscrypt.so'
         exclude 'lib/x86_64/linux/libscrypt.so'
+        exclude 'lib/armeabi-v7a/libscrypt.so'
+        exclude 'lib/x86/libscrypt.so'
     }
 
     buildTypes {
