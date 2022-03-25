@@ -12,7 +12,7 @@
     <string name="action_swap_coins">Trocar moeda</string>
     <string name="action_delete">Apagar</string>
     <string name="action_change_address_type">Alterar o tipo de endereço</string>
-	<string name="action_sweep_wallet">Transferir carteira</string>
+	<string name="action_sweep_wallet">Varrer saldo (PrivKey)</string>
     <!-- Errors -->
     <string name="error_generic">Ocorreu um erro ao executar a ação</string>
     <string name="error_could_not_read_wallet">Impossível ler a carteira</string>
@@ -340,8 +340,8 @@
     <string name="wallet_fork_title">Spero Will Hardkork às 0:00 UTC Jan 01, 2022</string>
     <string name="wallet_fork_message">Suas moedas serão salvos. Mantenha a frase de recuperação. Por favor, espere para atualizar esta carteira. Transações após 01 de janeiro de janeiro de uma carteira não renovada seão invalidadas. Por favor, leia informações detalhadas sobre o Hardfork.</string>
     <string name="support_message">Entre em contato com o suporte de Spercoin</string>
-    <string name="title_activity_sweep_wallet">Importação de carteira de papel</string>
-    <string name="sweep_wallet_info">Você está prestes a transferir moedas de uma carteira de papel para sua carteira Spercoin. Após a conclusão da transferência, evite reutilizar a carteira de papel por motivos de segurança. Formatos suportados: Wif, Bip38, Mini chave privada.</string>
+    <string name="title_activity_sweep_wallet">Varredura de carteira externa</string>
+    <string name="sweep_wallet_info">Você está prestes a transferir moedas de uma carteira externa via chave privada para sua carteira Spercoin. \nO saldo será retirado da carteira externa e enviado a carteira SperoCoin, com isso taxas de rede deverão ser consideradas. \nApós a conclusão da transferência, evite reutilizar a carteira externa por motivos de segurança. Formatos suportados: Wif, Bip38, Mini chave privada.</string>
     <string name="sweep_wallet_key_title">Chave privada</string>
     <string name="sweep_wallet_key_password">Senha chave privada</string>
     <string name="sweep_wallet_key_hint">Digite ou digitalize uma chave privada</string>
