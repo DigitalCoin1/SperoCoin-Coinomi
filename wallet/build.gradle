@@ -1,19 +1,53 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 30
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId 'com.sperocoin.wallet'
         minSdkVersion 25
-        targetSdkVersion 29
-        versionCode 60
-        versionName 'v2.7.0.0'
-        javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+        targetSdkVersion 30
+        versionCode 2
+        versionName 'v2.7.0.5'
+        ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+            universalApk true
+        }
+    }
+
+    packagingOptions {
+        exclude 'lib/x86_64/darwin/libscrypt.dylib'
+        exclude 'lib/x86_64/freebsd/libscrypt.so'
+        exclude 'lib/x86_64/linux/libscrypt.so'
+        exclude 'lib/armeabi-v7a/libscrypt.so'
+        exclude 'lib/x86/libscrypt.so'
+    }
+
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -21,6 +55,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     sourceSets {
         androidTest {
             setRoot('src/test')
@@ -50,38 +90,22 @@ repositories {
 //}
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile fileTree(include: ['*.jar'], dir: '../core/libs')
-    // Testing
-    //    androidTestCompile 'junit:junit:4.11'
-    //    androidTestCompile 'org.robolectric:robolectric:2.3'
-    //    androidTestCompile 'com.squareup:fest-android:1.0.+'
-    compile project(':core')
-    compile 'com.android.support:gridlayout-v7:23.3.0'
-    compile 'com.android.support:support-v4:23.3.0'
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    //    compile 'com.android.support:preference-v7:23.2.1'
-    compile 'com.google.guava:guava:16.0.1'
-    compile 'com.google.code.findbugs:jsr305:2.0.1'
-    compile 'com.madgag.spongycastle:core:1.51.0.0'
-    compile 'com.google.protobuf:protobuf-java:2.5.0'
-    compile 'com.google.zxing:core:3.1.0'
-    compile 'ch.acra:acra:4.8.5'
-    compile 'com.android.support:support-v4-preferencefragment:1.0.0@aar'
-    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: '../core/libs')
+
+
+    implementation project(':core')
+    implementation 'com.android.support:support-v13:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4-preferencefragment:1.0.0@aar'
+    implementation 'com.google.android.gms:play-services-auth:16.0.0'
+    implementation 'com.google.guava:guava:16.0.1'
+    implementation 'com.google.code.findbugs:jsr305:2.0.1'
+    implementation 'com.madgag.spongycastle:core:1.51.0.0'
+    implementation 'com.google.protobuf:protobuf-java:2.5.0'
+    implementation 'com.google.zxing:core:3.1.0'
+    implementation 'ch.acra:acra:4.8.5'
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation group: 'org.apache.maven', name: 'maven-artifact', version: '3.0.3'
 }
-
-//apply plugin: 'robolectric'
-
-//robolectric {
-//    include '**/*Test.class'
-//    exclude '**/espresso/**/*.class'
-//}
-
-//apply plugin: 'idea'
-
-//idea {
-//    module {
-//        testOutputDir = file('build/test-classes/debug')
-//    }
-//}

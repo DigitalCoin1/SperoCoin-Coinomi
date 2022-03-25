@@ -8,3 +8,4 @@ core/build
 wallet/build
 wallet/release
 *.db
+*.hprof

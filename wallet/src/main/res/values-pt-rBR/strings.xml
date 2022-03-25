@@ -12,7 +12,7 @@
     <string name="action_swap_coins">Trocar moeda</string>
     <string name="action_delete">Apagar</string>
     <string name="action_change_address_type">Alterar o tipo de endereço</string>
-	<string name="action_sweep_wallet">Transferir carteira</string>
+	<string name="action_sweep_wallet">Varrer saldo (PrivKey)</string>
     <!-- Errors -->
     <string name="error_generic">Ocorreu um erro ao executar a ação</string>
     <string name="error_could_not_read_wallet">Impossível ler a carteira</string>
@@ -63,8 +63,8 @@
     <string name="restore_wallet">Restaurar uma carteira</string>
     <string name="test_wallet">Carteira de teste</string>
     <!-- Intro UP-->
-    <string name="test_wallet_warning_title">Criar uma carteira de teste?</string>
-    <string name="test_wallet_warning_message">Se criar uma nova carteira de teste, a sua carteira existente será perdida, pode recuperá-la com a sua <i>frase de recuperação</i>.</string>
+    <string name="test_wallet_warning_title">Crie uma carteira de teste?</string>
+    <string name="test_wallet_warning_message">Se você criar uma nova carteira de teste, seu portfólio existente será perdido, você poderá recuperá-lo com sua <i>frase de recuperação</i>.</string>
     <string name="incompatible_device_warning_title">Dispositivo incompatível</string>
     <string name="incompatible_device_warning_message">Este dispositivo não consegue executar algumas funções criptográficas devido a limitações de software ou hardware.\nO problema poderia ser resolvido após a atualização de software do fabricante do dispositivo.\n\nEntre em contacto conosco se você tiver alguma dúvida: support@geopay.me</string>
     <!-- Recovery fragment -->
@@ -92,16 +92,16 @@
     <!-- Debugging -->
     <string name="title_activity_debugging">Depuração</string>
     <string name="debugging_info">Você pode usar uma coleção de ferramentas para depurar vários problemas com sua carteira.</string>
-    <string name="debugging_test_wallet_password">Testes de destravamento de carteira</string>
-    <string name="debugging_test_wallet_password_results">Carteira destravada: %1$s\nFingerprints\nEntrada: %2$s\nChave: %3$s\n</string>
+    <string name="debugging_test_wallet_password">Carteira desbloqueada para testes.</string>
+    <string name="debugging_test_wallet_password_results">Carteira desbloqueada: %1$s Imprimir impressões digitais: %2$s chave: %3$s</string>
     <!-- PayToDialog-->
     <string name="ambiguous_address_title">Endereço ambíguo</string>
     <string name="ambiguous_address_message">Por favor, selecione o tipo correto de moeda</string>
     <!-- Balance fragment -->
     <string name="wallet_transactions_coinbase">minerado</string>
     <string name="history_empty">A sua carteira está vazia\n\nUse a carteira Sperocoin para suas compras e vendas diárias\nRecomendamos que mantenha apenas o suficiente para os seus gastos diários</string>
-    <string name="sent_to">Enviado para</string>
-    <string name="received_with">Recebido com</string>
+    <string name="sent_to">enviado para</string>
+    <string name="received_with">recebido com</string>
     <string name="get_tx_info_error">Não foi possível obter informação sobre a transação</string>
     <string name="disconnected_label">Sem ligação</string>
     <string name="no_wallet_pocket_selected">Nenhuma conta da carteira selecionada</string>
@@ -133,15 +133,15 @@
     <string name="amount_error">O valor fornecido não é válido</string>
     <string name="amount_error_empty">Por favor insira uma quantidade</string>
     <string name="amount_error_negative">Não é possível enviar uma quantidade negativa</string>
-    <string name="amount_error_decimal_places">Demasiadas casas decimais, tente menos do que %1$d</string>
+    <string name="amount_error_decimal_places">Muitas casas decimais, tente com menos de %1$d</string>
     <string name="amount_error_too_small">O valor mínimo é pelo menos de %1$s</string>
     <string name="amount_error_not_enough_money_plain">Moedas insuficientes</string>
     <string name="amount_error_not_enough_money">Moedas insuficientes, o saldo atual é %1$s</string>
     <string name="amount_warn_fees_apply">Um pouco menos será enviado por causa de taxas</string>
     <!-- Set Password fragment UP-->
     <string name="set_password_info">Defina uma senha para proteger a sua carteira no uso diário.</string>
-    <string name="set_password_seed_protect">Proteger também a minha frase de recuperação (BIP39)</string>
-    <string name="set_password_seed_protect_info">A senha torna-se permanente e é necessária para restaurar sua carteira com a frase de recuperação.\nAviso: Se você esquecer sua senha será impossível restaurar sua carteira!</string>
+    <string name="set_password_seed_protect">Também proteja minha frase de recuperação (BIP39)</string>
+    <string name="set_password_seed_protect_info">A senha se torna permanente e é necessária para restaurar sua carteira com a frase de recuperação. AVISO: Se você esquecer sua senha, será impossível restaurar sua carteira!</string>
     <string name="set_password1">Escreva a sua senha</string>
     <string name="set_password2">Confirme a sua senha</string>
     <string name="password_too_common_error">a senha \"%1$s\" é demasiado comum para ser segura.</string>
@@ -180,7 +180,7 @@
     <string name="about_credits_nubits">Infra-estrutura de servidor doada por NuBits\nhttps://nubits.com/</string>
     <string name="about_credits_translations">Traduções feitas por:</string>
     <string name="about_credits_bitcoinj">Usa a biblioteca Bitcoinj\nhttp://bitcoinj.github.io/</string>
-    <string name="about_credits_electrum">Utiliza o software de servidor de Electrum\nhttps://electrum.org/</string>
+    <string name="about_credits_electrum">Utiliza o software de servidor de ElectrumX\nhttps://github.com/DigitalCoin1/electrumx-sperocoin/</string>
     <string name="about_credits_schildbach">Influenciado por Andreas Schildbach\nhttps://github.com/schildbach/bitcoin-wallet/</string>
     <string name="about_credits_zxing">Funcionalidade de código QR por ZXing\nhttps://github.com/zxing/zxing</string>
     <string name="about_credits_crypto_icons">Cripto-ícones por Chris Shepherd\nhttps://github.com/shphrd/crypto-icons</string>
@@ -197,7 +197,7 @@
     <!-- Transaction amount visualizer -->
     <string name="internal_transfer">Transferência interna</string>
     <!-- Fees settings -->
-    <string name="title_activity_transaction_fees">Taxa de transação</string>	
+    <string name="title_activity_transaction_fees">Taxas de transação</string>
     <!-- Transaction Details -->
     <string name="title_activity_transaction_details">Detalhes da transação</string>
     <string name="sent">Enviado</string>
@@ -230,7 +230,7 @@
     <string name="edit_address_book_entry_dialog_address_label">Endereço</string>
     <string name="edit_address_book_entry_dialog_label_label">Descrição</string>
     <!-- Overview -->
-    <string name="title_activity_overview">Saldo total</string>
+    <string name="title_activity_overview">Visão geral</string>
     <!-- Settings -->
     <string name="title_activity_settings">Configurações</string>
     <string name="pref_title_restore_wallet">Restaurar a carteira</string>
@@ -245,7 +245,7 @@
     <string name="seed_working">Aguarde&#8230;</string>
     <string name="seed_password_protected">Esta frase de recuperação está protegida por senha (BIP39)</string>
     <!-- Exchange -->
-    <string name="title_activity_trade">Troca de moeda</string>
+    <string name="title_activity_trade">Exchange</string>
     <string name="trade_info">Moedas requesitadas como entrada serão automaticamente adicionadas à sua carteira.</string>
     <string name="trade_info_rates">Taxas de troca de moeda incluem taxas de transação por ShapeShift.io\nUsando a de troca de moeda da Sperocoin e considerando que a aceitação\n dos termos e condições enunciados em ShapeShift.io</string>
     <string name="trade_from_coin_label">Moedas enviadas</string>
@@ -320,5 +320,45 @@
     <string name="action_share">Compartilhar</string>
     <string name="button_add">Adicionar</string>
     <string name="title_activity_sign_verify_message">Assinar/verificar mensagem</string>
-    <string name="action_balance">Saldo da carteira</string>
+    <string name="action_balance">Saldo</string>
+    <string name="action_support">Contate o suporte</string>
+    <string name="error_camera">Não foi possível acessar a câmera do dispositivo</string>
+    <string name="button_default">Padrão</string>
+    <string name="button_execute">Executar</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="wallet_is_not_locked_message">Sua Carteira Não Está Bloqueada</string>
+    <string name="override_wallet_warning_title">Substituir a carteira existente?</string>
+    <string name="override_new_wallet_warning_message">Se você criar uma nova carteira, sua carteira existente será perdida a menos que você tenha backup de sua frase de recuperação.</string>
+    <string name="override_restore_wallet_warning_message">Se você restaurar uma carteira, sua carteira existente será perdida a menos que você tenha backup de sua frase de recuperação.</string>
+    <string name="received_from">Recebido de</string>
+    <string name="set_bip39_passphrase">Digite sua Senha de Frase Bip39</string>
+    <string name="edit_account_title">Editar conta</string>
+    <string name="edit_account_description_label">Descrição</string>
+    <string name="edit_account_delete_title">Remover conta %1$s?</string>
+    <string name="edit_account_delete_description">Isso remove a conta da carteira, mas ainda é possível adicioná-lo e recuperar as moedas.</string>
+    <string name="wallet_fork_title">Spero Will Hardkork às 0:00 UTC Jan 01, 2022</string>
+    <string name="wallet_fork_message">Suas moedas serão salvos. Mantenha a frase de recuperação. Por favor, espere para atualizar esta carteira. Transações após 01 de janeiro de janeiro de uma carteira não renovada seão invalidadas. Por favor, leia informações detalhadas sobre o Hardfork.</string>
+    <string name="support_message">Entre em contato com o suporte de Spercoin</string>
+    <string name="title_activity_sweep_wallet">Varredura de carteira externa</string>
+    <string name="sweep_wallet_info">Você está prestes a transferir moedas de uma carteira externa via chave privada para sua carteira Spercoin. \nO saldo será retirado da carteira externa e enviado a carteira SperoCoin, com isso taxas de rede deverão ser consideradas. \nApós a conclusão da transferência, evite reutilizar a carteira externa por motivos de segurança. Formatos suportados: Wif, Bip38, Mini chave privada.</string>
+    <string name="sweep_wallet_key_title">Chave privada</string>
+    <string name="sweep_wallet_key_password">Senha chave privada</string>
+    <string name="sweep_wallet_key_hint">Digite ou digitalize uma chave privada</string>
+    <string name="sweep_wallet_bad_format">Não foi possível reconhecer o formato da chave privada.</string>
+    <string name="sweep_wallet_bad_coin_type">O tipo de chave privada não corresponde ao tipo de conta de destino.</string>
+    <string name="sweep_wallet_bad_password">Senha incorreta.</string>
+    <string name="sweep_wallet_zero_coins">A chave privada não contém fundos.</string>
+    <string name="sweep_wallet_key_wait">Por favor, espere enquanto estamos escaneando sua carteira de papel</string>
+    <string name="sweep_wallet_key_decoding">Decodificando chave privada&#8230;</string>
+    <string name="sweep_wallet_key_loading">Carregando Saldo &#8230;</string>
+    <string name="sweep_wallet_key_signing">Criando transação &#8230;</string>
+    <string name="tx_fees_title">%1$s taxas de transação</string>
+    <string name="tx_fees_description">O valor da taxa é %1$s.</string>
+    <string name="tx_fees_per_kilobyte">por kilobyte de dados de transação</string>
+    <string name="tx_fees_per_byte">por byte de dados de transação</string>
+    <string name="tx_fees_per_transaction">por transação</string>
+    <string name="terms_of_service_title">Termos de serviço</string>
+    <string name="wallet_transactions_stake">Staked</string>
+    <string name="wallet_nvs">Transação NVS.</string>
 </resources>

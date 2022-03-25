@@ -9,7 +9,7 @@
     <string name="action_copy">Copy</string>
     <string name="action_edit_label">Edit label</string>
     <string name="action_empty_wallet">Use all funds</string>
-    <string name="action_sweep_wallet">Sweep wallet</string>
+    <string name="action_sweep_wallet">Import wallet</string>
     <string name="action_settings">Settings</string>
     <string name="action_support">Contact support</string>
     <string name="action_about">About</string>
@@ -208,13 +208,13 @@
     <string name="about_credits_translations">Translations provided by:</string>
     <string name="about_credits_translations_credits" translatable="false">Tamara Castellano (Italian)\nJorge Nicolas Karmis (Spanish)\nGeorge Kimionis (Greek)\n@visvirial (Japanese)\nДенис Рейн (Russian, Ukrainian)\nFrancis Santana (Brazilian Portuguese)</string>
     <string name="about_credits_bitcoinj">Uses Bitcoinj library\nhttp://bitcoinj.github.io/</string>
-    <string name="about_credits_electrum">Uses Electrum server software\nhttps://electrum.org/</string>
+    <string name="about_credits_electrum">Uses ElectrumX server software\nhttps://github.com/DigitalCoin1/electrumx-sperocoin/</string>
     <string name="about_credits_schildbach">Influenced by Andreas Schildbach\nhttps://github.com/schildbach/bitcoin-wallet/</string>
     <string name="about_credits_zxing">QR-code functionality by ZXing\nhttps://github.com/zxing/zxing</string>
     <string name="about_credits_crypto_icons">Crypto-icons by Chris Shepherd\nhttps://github.com/shphrd/crypto-icons</string>
     <string name="about_credits_font_icons">Font-icons by Daniel Bruce\nhttp://www.entypo.com</string>
     <string name="about_credits_exchange_rates">Exchange rates provided by\nhttp://www.cryptocoincharts.info/\nhttps://bitcoinaverage.com/</string>
-    <string name="about_coinomi_copyright" translatable="false">\u00A9 2017–2021 Sperocoin</string>
+    <string name="about_coinomi_copyright" translatable="false">\u00A9 2017–2021 Sperocoin\n\u00A9 2014–2016 Coinomi</string>
     <!-- Add Coins -->
     <string name="title_activity_add_coins">Add coins</string>
     <!-- %1$s is the coin name e.g. ... create a Bitcoin account ... -->
@@ -293,6 +293,9 @@
     <string name="debugging_test_wallet_password_results">Unlocked wallet: %1$s\n\nFingerprints\nInput: %2$s\nKey: %3$s</string>
     <!-- Overview -->
     <string name="title_activity_overview">Overview</string>
+    <!-- Wallet fork -->
+    <string name="wallet_fork_title">SPERO will hardfork at 0:00 UTC Jan 01, 2022</string>
+    <string name="wallet_fork_message">Your coins will be save. Keep recovery phrase. Please waiting for update this wallet. Transactions after 01 Jan 2022 from an unrenewed wallet will be invalid. Please read detailed information about hardfork.</string>
     <!-- Exchange -->
     <string name="title_activity_trade">Exchange</string>
     <string name="trade_info">Select the coins you wish to exchange.\nThe converted coins will be automatically added to your wallet.</string>
@@ -370,8 +373,8 @@
     <string name="support_message">Contact Sperocoin support</string>
     <!-- Sweep wallet -->
     <!-- Sweep paper wallet means to redeem coins from a code usually printed on a paper -->
-    <string name="title_activity_sweep_wallet">Sweep paper wallet</string>
-    <string name="sweep_wallet_info">You are about to transfer coins from a paper wallet to your Sperocoin wallet.\nAfter the transfer is complete, please avoid reusing the paper wallet for security reasons.\n\nSupported formats: WIF, BIP38, Mini private key.</string>
+    <string name="title_activity_sweep_wallet">Sweep external wallet</string>
+    <string name="sweep_wallet_info">You are about to transfer coins from a external wallet to your Sperocoin wallet.  The balance will be withdrawn from the imported wallet and sent to the SperoCoin wallet, therefore network fees must be considered.  After the transfer is complete, please avoid reusing the external wallet for security reasons.  Supported formats: WIF, BIP38, Mini private key.</string>
     <string name="sweep_wallet_key_title">Private key</string>
     <string name="sweep_wallet_key_password">Private key password</string>
     <string name="sweep_wallet_key_hint">type or scan a private key</string>
@@ -450,5 +453,14 @@ The user of the wallet agrees to arbitrate any dispute arising from or in connec
 8. Last amendment\n
 \n
 This disclaimer was amended for the last time on January 1st, 2016.</string>
+    <string name="wallet_transactions_stake">Staked</string>
+    <string name="wallet_nvs">NVS transaction</string>
+    <string name="test_wallet_warning_title">Create a test portfolio?</string>
+    <string name="test_wallet_warning_message">If you create a new test wallet, your existing portfolio will be lost, you can recover it with your <i>recovery phrase</i>.</string>
+    <string name="amount_error_decimal_places">Too many decimal places, try less than %1$d</string>
+    <string name="set_password_seed_protect">Also protect my recovery phrase (BIP39)</string>
+    <string name="set_password_seed_protect_info">The password becomes permanent and is needed to restore your wallet with the recovery phrase. Warning: If you forget your password it will be impossible to restore your wallet!</string>
+    <string name="seed_encrypted_touch_to_decrypt">Touch to unlock</string>
+    <string name="action_balance">Balance</string>
 
 </resources>
