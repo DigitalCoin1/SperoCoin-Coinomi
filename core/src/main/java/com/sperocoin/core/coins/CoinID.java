@@ -23,6 +23,7 @@ import java.util.Set;
  */
 public enum CoinID {
     SPEROCOIN_MAIN(SperocoinMain.get()),
+    SPEROCOIN_TEST(SperocoinTest.get())
     ;
 
     private static List<CoinType> types;

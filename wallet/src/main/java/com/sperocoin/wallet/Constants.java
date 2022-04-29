@@ -8,6 +8,7 @@ import com.sperocoin.core.coins.CoinType;
 import com.sperocoin.core.coins.DogecoinTest;
 import com.sperocoin.core.coins.LitecoinTest;
 import com.sperocoin.core.coins.SperocoinMain;
+import com.sperocoin.core.coins.SperocoinTest;
 import com.sperocoin.core.network.CoinAddress;
 import com.sperocoin.stratumj.ServerAddress;
 import com.google.common.collect.ImmutableList;
@@ -181,7 +182,9 @@ public class Constants {
                                                     new ServerAddress("ixc-cce-2.sperocoin.net", 5047)),
 */
             new CoinAddress(SperocoinMain.get(),   new ServerAddress("electrumx.sperocoin.org", 50002),
-                                                    new ServerAddress("electrumx.sperocoin.org", 50001))
+                                                    new ServerAddress("electrumx.sperocoin.org", 50001)),
+            new CoinAddress(SperocoinTest.get(),   new ServerAddress("electrumxtestnet.sperocoin.org", 50004),
+                    new ServerAddress("electrumxtestnet.sperocoin.org", 50003))
     );
 
     public static final HashMap<CoinType, Integer> COINS_ICONS;
@@ -233,6 +236,7 @@ public class Constants {
         COINS_ICONS.put(CoinID.IXCOIN_MAIN.getCoinType(), R.drawable.ixcoin);
         */
         COINS_ICONS.put(CoinID.SPEROCOIN_MAIN.getCoinType(), R.mipmap.sperocoin);
+        COINS_ICONS.put(CoinID.SPEROCOIN_TEST.getCoinType(), R.mipmap.sperocointestnet);
 
         COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
         /*
@@ -277,6 +281,7 @@ public class Constants {
         COINS_BLOCK_EXPLORERS.put(CoinID.IXCOIN_MAIN.getCoinType(), "https://chainz.cryptoid.info/ixc/tx.dws?%s");
         */
         COINS_BLOCK_EXPLORERS.put(CoinID.SPEROCOIN_MAIN.getCoinType(), "https://explorer.sperocoin.org/tx/%s");
+        COINS_BLOCK_EXPLORERS.put(CoinID.SPEROCOIN_TEST.getCoinType(), "https://explorer-testnet.sperocoin.org/tx/%s");
     }
 
     public static final CoinType DEFAULT_COIN = SperocoinMain.get();
@@ -288,7 +293,8 @@ public class Constants {
     );
 
     public static final List<CoinType> SUPPORTED_COINS = ImmutableList.of(
-            SperocoinMain.get()
+            SperocoinMain.get(),
+            SperocoinTest.get()
             /*
             BitcoinMain.get(),
             AuroracoinMain.get(),
